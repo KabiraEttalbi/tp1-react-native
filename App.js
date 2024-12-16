@@ -1,11 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { View, Alert, StyleSheet } from 'react-native';
+import MyButton from './components/MyButton';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <MyButton
+        title="Début du Test2"
+        color="#388E3C"
+        onPress={() => Alert.alert('Alert', 'ceci est le début du test2')}
+      />
+      <MyButton
+        title="Fin du Test2"
+        color="#0288D1"
+        onPress={() => Alert.alert('Alert', 'ceci est la fin du test2')}
+      />
     </View>
   );
 }
@@ -13,8 +22,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
 });
